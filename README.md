@@ -25,23 +25,25 @@ Dart SDK: Installation Guide
 # Folder Structure
 The project follows a standard Flutter folder structure:
 
-lib/: Contains the Dart source code files.
-models/: Defines the data models used in the app.
-screens/: Contains the UI screens of the app.
-database/: Includes the SQLite database helper class.
-utils/: Contains utility functions and classes.
-test/: Includes unit tests for the app.
-Dependencies
-The app utilizes the following Flutter packages:
+lib/: Contains the Dart source code files.\
+models/: Defines the data models used in the app.\
+screens/: Contains the UI screens of the app.\
+database/: Includes the SQLite database helper class.\
+utils/: Contains utility functions and classes.\
+test/: Includes unit tests for the app.\
 
-sqflite: For interacting with the SQLite database.
-path_provider: For accessing the device's file system.
-fluttertoast: For displaying toast messages.
-flutter_slidable: For enabling swipe-to-delete functionality.
-Contributing
+# Dependencies
+The app utilizes the following Flutter packages:\
+
+sqflite: For interacting with the SQLite database.\
+path_provider: For accessing the device's file system.\
+fluttertoast: For displaying toast messages.\
+flutter_slidable: For enabling swipe-to-delete functionality.\
+
+## Contributing
 Contributions are welcome! If you find any bugs or have suggestions for improvements, please open an issue or submit a pull request.
 
-License
+## License
 This project is licensed under the MIT License.
 
 
