@@ -19,18 +19,22 @@ class TodoBloc extends Bloc<TodoEvent, TodoState> {
   @override
   Stream<TodoState> mapEventToState(TodoEvent event) async* {
     if (event is LoadTodos) {
-      yield TodoLoading();
-      final todos = await dbHelper.getTodos();
-      yield TodoLoaded(todos: todos);
+      yield* _mapLoadTodosToState();
     } else if (event is AddTodo) {
       await dbHelper.insertTodo(event.todo);
-      add(LoadTodos());
+      yield* _mapLoadTodosToState();
     } else if (event is UpdateTodo) {
       await dbHelper.updateTodo(event.todo);
-      add(LoadTodos());
+      yield* _mapLoadTodosToState();
     } else if (event is DeleteTodo) {
       await dbHelper.deleteTodoById(event.id);
-      add(LoadTodos());
+      yield* _mapLoadTodosToState();
     }
+  }
+
+  Stream<TodoState> _mapLoadTodosToState() async* {
+    yield TodoLoading();
+    final todos = await dbHelper.getTodos();
+    yield TodoLoaded(todos: todos);
   }
 }
