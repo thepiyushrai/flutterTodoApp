@@ -8,6 +8,10 @@ import 'package:flutter_to_do_app/oprn/UpdateTodo.dart';
 import 'package:flutter_to_do_app/state/TodoLoaded.dart';
 import 'package:flutter_to_do_app/state/TodoLoading.dart';
 import 'package:flutter_to_do_app/state/TodoState.dart';
+
+
+
+
 // class TodoListScreen extends StatelessWidget {
 //   final TextEditingController _titleController = TextEditingController();
 //   final TextEditingController _descriptionController = TextEditingController();
@@ -145,7 +149,7 @@ import 'package:flutter_to_do_app/state/TodoState.dart';
 //   }
 // }
 
-
+// Represents the screen that displays the todo list
 class TodoListScreen extends StatelessWidget {
 
   final TextEditingController _titleController = TextEditingController();
@@ -160,10 +164,12 @@ class TodoListScreen extends StatelessWidget {
       body: BlocBuilder<TodoBloc, TodoState>(
         builder: (context, state) {
           if (state is TodoLoading) {
+            // Display a loading indicator while todos are being loade
             return Center(
               child: CircularProgressIndicator(),
             );
           } else if (state is TodoLoaded) {
+            // Display the list of todos
             return ListView.builder(
               itemCount: state.todos.length,
               itemBuilder: (context, index) {
@@ -186,6 +192,7 @@ class TodoListScreen extends StatelessWidget {
                     },
                   ),
                   onLongPress: () {
+                    // Show a confirmation dialog when a todo is long-pressed
                     showDialog(
                       context: context,
                       builder: (context) {
@@ -224,6 +231,7 @@ class TodoListScreen extends StatelessWidget {
       floatingActionButton: FloatingActionButton(
         child: Icon(Icons.add),
         onPressed: () {
+          // Show a dialog to add a new tod
           showDialog(
             context: context,
             builder: (context) {
