@@ -4,7 +4,7 @@ A new Flutter project.
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+This project is a basic CRUD operation-based Flutter application. In we have created a Todo app, writing todo details and managing its list.
 
 Flutter Todo SQLite App
 This is a simple Todo app built with Flutter that utilizes SQLite as the database for storing tasks. It allows users to create, read, update, and delete tasks.
